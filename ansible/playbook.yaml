@@ -6,7 +6,7 @@
   vars:
     cluster_name: pointcross-eks-cluster
     region: ap-south-1
-    kubeconfig_path: /home/vbarask/prod_2007
+    kubeconfig_path:  ~/.kube_config
 
   tasks:
   - name: Update kubeconfig for EKS cluster
