@@ -3,9 +3,7 @@
 This repository contains a complete setup using **Terraform**, **Ansible**, and **Kubernetes manifests** for provisioning infrastructure, applying configurations, and deploying applications.
 
 ---
-
 ## 🗂️ Project Structure
-## 📁 Project Structure
 
 ```
 PointCross-Assignment/
@@ -37,10 +35,12 @@ PointCross-Assignment/
 │       ├── apply_quotas.yml
 │       └── apply_namespaces.yml
 ```
-Terraform Setup
+## 🔧 Terraform Deployment Steps
 
 Navigate to the terraform directory:
 ```
+cd terraform
+
 # Step 1: Initialize Terraform
 terraform init
 
@@ -53,4 +53,29 @@ terraform plan -var-file="terraform.tfvars"
 # Step 4: Apply the changes 
 terraform apply -var-file="terraform.tfvars"
 ```
+
+## 🔧 Ansible Deployment Steps
+
+To run the Ansible playbooks that apply Kubernetes resources, follow the steps below:
+
+---
+
+### 🔐 Step 1: Set Up AWS Credentials
+
+Before using Ansible, you must configure your AWS CLI with the correct credentials:
+
+```bash
+aws configure  //Enter the credentails
+
+cd ansible
+
+Run the playbook:
+
+ansible-playbook playbook.yaml
+rm apply -var-file="terraform.tfvars"
+```
+
+
+
+
 
