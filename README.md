@@ -114,7 +114,6 @@ kubectl get svc nginx-service -n tenant1
 Access the App in Browser
 http://<EC2-PUBLIC-IP>:<NODEPORT>
 
-```
 ![App Screenshot](./Screenshot%202025-08-07%20182552.png)
 ![App Screenshot](./Screenshot%202025-08-07%20182712.png)
 
