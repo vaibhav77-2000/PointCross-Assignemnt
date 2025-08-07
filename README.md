@@ -37,3 +37,20 @@ PointCross-Assignment/
 │       ├── apply_quotas.yml
 │       └── apply_namespaces.yml
 ```
+Terraform Setup
+
+Navigate to the terraform directory:
+```
+# Step 1: Initialize Terraform
+terraform init
+
+# Step 2: Validate the code
+terraform validate
+
+# Step 3: Review the code
+terraform plan -var-file="terraform.tfvars"
+
+# Step 4: Apply the changes 
+terraform apply -var-file="terraform.tfvars"
+```
+
