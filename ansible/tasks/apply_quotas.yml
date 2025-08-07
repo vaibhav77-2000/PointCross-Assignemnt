@@ -1,0 +1,11 @@
+- name: Apply Resource Quota 1
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    src: "/home/vbarask/assignment/Application-Deployment/resource-quota-1.yaml"
+
+- name: Apply Resource Quota 2
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    src: "/home/vbarask/assignment/Application-Deployment/resource-quota-2.yaml"

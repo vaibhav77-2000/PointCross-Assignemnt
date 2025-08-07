@@ -1,0 +1,11 @@
+- name: Apply Service 1
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    src: "/home/vbarask/assignment/Application-Deployment/svc-1.yaml"
+
+- name: Apply Service 2
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    src: "/home/vbarask/assignment/Application-Deployment/svc-2.yaml"

@@ -1,0 +1,11 @@
+- name: Apply Tenant 1 Deployment
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    src: "/home/vbarask/assignment/Application-Deployment/tenant1-deployment.yaml"
+
+- name: Apply Tenant 2 Deployment
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    src: "/home/vbarask/assignment/Application-Deployment/tenant2-deployment.yaml"

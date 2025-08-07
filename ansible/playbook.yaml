@@ -1,0 +1,36 @@
+---
+- name: Update kubeconfig for EKS and apply Kubernetes resources
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    cluster_name: pointcross-eks-cluster
+    region: ap-south-1
+    kubeconfig_path: /home/vbarask/prod_2007
+
+  tasks:
+  - name: Update kubeconfig for EKS cluster
+    shell: |
+      aws eks update-kubeconfig \
+        --name {{ cluster_name }} \
+        --region {{ region }} \
+        --kubeconfig {{ kubeconfig_path }}
+    environment:
+      AWS_PROFILE: default
+
+  - name: Export KUBECONFIG for future tasks
+    set_fact:
+      env_vars:
+        KUBECONFIG: "{{ kubeconfig_path }}"
+
+  - name: Deployment of Namespace
+    include_tasks: tasks/apply_namespaces.yml
+
+  - name: Deployment of  Resource Quota
+    include_tasks: tasks/apply_quotas.yml
+
+  - name: Deployment of Nginx Deployment
+    include_tasks: tasks/apply_deployments.yml
+
+  - name: Deployment of Nginx Service
+    include_tasks: tasks/apply_services.yml
