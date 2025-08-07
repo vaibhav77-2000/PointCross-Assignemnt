@@ -16,8 +16,9 @@ PointCross-Assignment/
 │   ├── namespace-2.yaml
 │   ├── resource-quota-1.yaml
 │   └── resource-quota-2.yaml
+|   └── Dockerfile
+|   └── index.html
 │
-├── Dockerfile
 │
 ├── terraform/                    # Terraform code for infra provisioning
 │   ├── main.tf
@@ -58,11 +59,6 @@ terraform apply -var-file="terraform.tfvars"
 ## 🔧 Ansible Deployment Steps
 
 To run the Ansible playbooks that apply Kubernetes resources, follow the steps below:
-
----
-
-### 🔐 Step 1: Set Up AWS Credentials
-
 Before using Ansible, you must configure your AWS CLI with the correct credentials:
 
 ```
