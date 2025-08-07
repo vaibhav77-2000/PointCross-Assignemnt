@@ -47,7 +47,7 @@ module "eks" {
   }
 }
 
-resource "aws_ecr_repository" "nginx_repo" {
+resource "aws_ecrpublic_repository" "nginx_repo" {
   name                 = var.ecr_repo_name
   image_tag_mutability = "MUTABLE"
 
