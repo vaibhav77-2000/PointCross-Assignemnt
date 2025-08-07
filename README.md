@@ -108,11 +108,12 @@ After successfully deploying your service with a `NodePort` type in Kubernetes, 
 Use this command to check the NodePort:
 ```bash
 kubectl get svc nginx-service -n tenant1
-kubectl get svc nginx-service -n tenant1
-```
+kubectl get svc nginx-service -n tenant2
 
 Access the App in Browser
 http://<EC2-PUBLIC-IP>:<NODEPORT>
+```
+
 
 ![App Screenshot](./Screenshot%202025-08-07%20182552.png)
 ![App Screenshot](./Screenshot%202025-08-07%20182712.png)
