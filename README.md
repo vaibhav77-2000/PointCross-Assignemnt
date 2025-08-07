@@ -39,18 +39,19 @@ PointCross-Assignment/
 
 Navigate to the terraform directory:
 ```
+# Step 1: Navigate to the terraform directory:
 cd terraform
 
-# Step 1: Initialize Terraform
+# Step 2: Initialize Terraform
 terraform init
 
-# Step 2: Validate the code
+# Step 3: Validate the code
 terraform validate
 
-# Step 3: Review the code
+# Step 4: Review the code
 terraform plan -var-file="terraform.tfvars"
 
-# Step 4: Apply the changes 
+# Step 5: Apply the changes 
 terraform apply -var-file="terraform.tfvars"
 ```
 
@@ -64,15 +65,16 @@ To run the Ansible playbooks that apply Kubernetes resources, follow the steps b
 
 Before using Ansible, you must configure your AWS CLI with the correct credentials:
 
-```bash
-aws configure  //Enter the credentails
-
+```
+# Step 1: Navigate to the terraform directory:
 cd ansible
 
-Run the playbook:
+# Step 2: Setup AWS Profile
+aws configure  
 
+# Step 3: Run the playbook:
 ansible-playbook playbook.yaml
-rm apply -var-file="terraform.tfvars"
+
 ```
 
 
