@@ -92,6 +92,29 @@ aws configure
 ansible-playbook playbook.yaml
 
 ```
+
+## 🔧 Testing Service On Nodeport
+```
+After successfully deploying your service with a `NodePort` type in Kubernetes, you can access it using the following method:
+
+### ✅ Prerequisites
+
+- Your EC2 instance’s security group allows inbound traffic on the NodePort (e.g., `30080`, `30001`, etc.).
+- The application is deployed and the pod is in `Running` state.
+- You know the **public IP** of your EC2 node and the assigned **NodePort**.
+
+### 🔍 Find the NodePort
+
+Use this command to check the NodePort:
+```bash
+kubectl get svc nginx-service -n tenant1
+kubectl get svc nginx-service -n tenant1
+```
+
+Access the App in Browser
+http://<EC2-PUBLIC-IP>:<NODEPORT>
+
+```
 ![App Screenshot](./Screenshot%202025-08-07%20182552.png)
 ![App Screenshot](./Screenshot%202025-08-07%20182712.png)
 
