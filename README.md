@@ -56,6 +56,26 @@ terraform plan -var-file="terraform.tfvars"
 terraform apply -var-file="terraform.tfvars"
 ```
 
+## 🔧 Build and Push Docker Image to Amazon ECR
+```
+# Step 1: Navigate to the terraform directory:
+cd Application-Deployment
+
+# Step 2: Setup AWS Profile
+aws configure  
+
+# Step 3:  ECR Login
+aws ecr get-login-password --region ap-south-1| docker login --username AWS --password-stdin XXXXXXXXXX.dkr.ecr.ap-south-1.amazonaws.com
+
+# Step 4: Build Docker Image
+docker build -t nginx-deployment:latest .
+
+# Step 5: Tag Docker Image for ECR
+docker tag nginx-deployment:latest XXXXXXX.dkr.ecr.ap-south-1.amazonaws.com/nginx-deployment:latest
+
+# Step 6: Push Image
+docker push XXXXXX.dkr.ecr.ap-south-1.amazonaws.com/nginx-deployment:latest
+```
 ## 🔧 Ansible Deployment Steps
 
 To run the Ansible playbooks that apply Kubernetes resources, follow the steps below:
