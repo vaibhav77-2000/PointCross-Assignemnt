@@ -92,6 +92,8 @@ aws configure
 ansible-playbook playbook.yaml
 
 ```
+![App Screenshot](./Screenshot 2025-08-07 182552.png)
+![App Screenshot](./Screenshot 2025-08-07 182712.png)
 
 
 
